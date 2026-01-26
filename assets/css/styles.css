@@ -1,0 +1,258 @@
+:root {
+  --navy: #0A192F;
+  --teal: #208091;   /* Brand Teal */
+  --orange: #F36F21; /* Primary CTA Orange */
+  --white: #FFFFFF;
+  --light-grey: #F4F6F8;
+  --font-main: 'Inter', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* Header & Nav */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  border-radius: 0; /* Sharp 90-degree corners */
+}
+
+.btn-primary {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  color: #666;
+  background: var(--light-grey);
+}
+
+.breadcrumbs a {
+  color: var(--teal);
+}
+
+.breadcrumbs span {
+  margin: 0 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-links h4 {
+  margin-bottom: 1.5rem;
+  color: var(--teal);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+/* Map */
+#engine-map {
+  height: 500px;
+  width: 100%;
+  background: #eee;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+  margin-top: 2rem;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--light-grey);
+  z-index: 1;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  background: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+
+.timeline-node .year {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.timeline-node .event {
+  font-size: 0.8rem;
+  display: block;
+}
+
+.node-2026 {
+  width: 20px;
+  height: 20px;
+  background: var(--teal);
+  margin: 0 auto 0.5rem;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Cards */
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  padding: 3rem;
+  border: 1px solid #ddd;
+}
+
+.card-noise { background: var(--light-grey); color: #666; }
+.card-outcomes { background: var(--navy); color: var(--white); border-color: var(--teal); }
+
+.pill-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+/* Contact Cards */
+.contact-router {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Calendly Modal trigger */
+.revival-audit-cta {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .impact-grid, .contact-router { grid-template-columns: 1fr; }
+}

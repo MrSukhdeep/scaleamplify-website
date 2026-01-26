@@ -1,0 +1,62 @@
+Act as a Principal Frontend Architect. Build a complete, production-grade website for "Scale Amplify," a high-end B2B Revenue Consulting firm.
+
+**STRICT ARCHITECTURAL RULES:**
+- **Stack:** Pure HTML5, CSS3, Vanilla JS. Static-only, optimized for Vercel/GitHub Pages.
+- **Copy Policy:** Use the EXACT text from the "Production Brief." No summarizing.
+- **Image Policy:** NO STOCK PHOTOS. Use ONLY provided assets (Logo, Founder Portrait). Use CSS for all other visuals.
+- **Performance:** Convert raster images to WebP. Implement srcset and loading="lazy".
+- **Enterprise SEO & Compatibility:**
+  - NEW: Add <meta http-equiv="X-UA-Compatible" content="IE=edge"> for legacy enterprise browser safety.
+  - NEW: Add <meta name="viewport" content="width=device-width, initial-scale=1.0"> and <meta name="robots" content="index, follow">.
+  - NEW: Add <link rel="canonical" href="https://scaleamplify.com/[page-slug]"> to every page.
+  - Implement Organization, Person (Founder), FAQPage, BreadcrumbList, and WebSite SearchAction Schema.
+
+**GLOBAL DESIGN SYSTEM (CSS VARIABLES):**
+:root {
+  --navy: #0A192F;
+  --teal: #208091;   /* Brand Teal */
+  --orange: #F36F21; /* Primary CTA Orange */
+  --white: #FFFFFF;
+  --light-grey: #F4F6F8;
+  --font-main: 'Inter', sans-serif;
+}
+Style: "Consulting Grade" Minimalism. Sharp 90-degree corners. High white space. Primary CTA buttons MUST use var(--orange).
+
+**SITE MAP (Generate 11 Files):**
+1. index.html | 2. revival-audit.html | 3. how-we-revive-dead-leads.html | 4. why-scale-amplify.html | 5. about-scale-amplify.html | 6. careers.html | 7. contact-us.html | 8. privacy-policy.html | 9. terms-of-use.html | 10. gdpr-alignment.html | 11. dpa.html
+
+---
+
+### **CRITICAL COMPONENT SPECIFICATIONS**
+
+**1. Navigation & Global CTA:**
+- Sticky Header. Logo Left, Links Center, "Request a Revival Audit" (var(--orange)) Right.
+- **Calendly Modal:** Class `.revival-audit-cta` triggers the Popup Widget using: https://calendly.com/sukhdeep-scaleamplify/the-revival-audit-pipeline-diagnostic
+
+**2. The "Connected Engine" Map (index.html):**
+- Lib: Leaflet.js (Greyscale). Center: India. SVG Arcs connecting India to nodes in NA, EMEA, and APAC.
+- **Mobile UX:** Disable `scrollWheelZoom` and `dragging` on mobile.
+
+**3. Founder Authority & Timeline (about-scale-amplify.html):**
+- Layout: Portrait next to the "Note from the Founder" copy.
+- **LinkedIn:** Teal (#208091) Icon next to name. Change to LinkedIn Blue (#0077B5) on hover.
+- **CSS Timeline:** Horizontal line. Nodes: 2010 (Fusion Factory), 2016 (Airtel Payments Bank), 2020 (Rawhood), 2024 (NeoGrowth), 2026 (Scale Amplify). Node 2026 is a pulsing teal hexagon.
+
+**4. Outcome Accountability (why-scale-amplify.html):**
+- **Economic Impact Card:** CSS Grid comparison.
+- Left: "Volume & Noise" (Muted). Right: "Precision & Outcomes" (High-contrast Navy/Teal).
+- **Badge:** Add a "Outcome-Validated" pill-badge next to Step 4 on Methodology/Comparison pages.
+
+**5. Contact Router (contact-us.html):**
+- **Top:** Inline Calendly Embed.
+- **Bottom:** 3 CSS Cards for Email Routing (New Business, Partnerships, Careers) with pre-filled mailto: subject lines.
+
+---
+
+### **TECHNICAL JAVASCRIPT & SEO**
+- Ensure `target="_blank"` and `rel="noopener noreferrer"` for outbound links.
+- Initialize Calendly script globally in head.
+- **Breadcrumbs:** Visually implement a subtle breadcrumb trail below the header on all internal pages.
+
+**FINAL TASK:**
+Generate all 11 HTML files, `assets/css/styles.css`, and `assets/js/script.js`. Ensure the code is clean, semantic, and production-ready.
